@@ -9,14 +9,14 @@ import BulmaView exposing (..)
 
 
 type alias Model =
-    { accountA : A.State String
+    { account : A.State String
     , country : A.State String
     }
 
 
 model : Model
 model =
-    { accountA = A.initState
+    { account = A.initState
     , country = A.initState
     }
 
@@ -34,7 +34,7 @@ update : Msg -> Model -> Model
 update msg model =
     case msg of
         SelectAccount op ->
-            { model | accountA = model.accountA |> A.update identity [ "caspian", "ccom" ] op }
+            { model | account = model.account |> A.update identity [ "caspian", "ccom" ] op }
 
         SelectCountry op ->
             { model | country = model.country |> A.update identity countries op }
@@ -46,7 +46,7 @@ view model =
         [ bulma
         , section [ class "section" ]
             [ div [ class "container" ]
-                [ div [ class "field" ] [ autoComplInput text "Account" model.accountA |> Html.map SelectAccount ]
+                [ div [ class "field" ] [ autoComplInput text "Account" model.account |> Html.map SelectAccount ]
                 , div [ class "field" ] [ autoComplInput text "Country" model.country |> Html.map SelectCountry ]
                 ]
             ]

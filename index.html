@@ -14501,7 +14501,7 @@ var _user$project$Main$update = F2(
 			return _elm_lang$core$Native_Utils.update(
 				model,
 				{
-					accountA: A4(
+					account: A4(
 						_user$project$AutoComp$update,
 						_elm_lang$core$Basics$identity,
 						{
@@ -14514,7 +14514,7 @@ var _user$project$Main$update = F2(
 							}
 						},
 						_p0._0,
-						model.accountA)
+						model.account)
 				});
 		} else {
 			return _elm_lang$core$Native_Utils.update(
@@ -14524,10 +14524,10 @@ var _user$project$Main$update = F2(
 				});
 		}
 	});
-var _user$project$Main$model = {accountA: _user$project$AutoComp$initState, country: _user$project$AutoComp$initState};
+var _user$project$Main$model = {account: _user$project$AutoComp$initState, country: _user$project$AutoComp$initState};
 var _user$project$Main$Model = F2(
 	function (a, b) {
-		return {accountA: a, country: b};
+		return {account: a, country: b};
 	});
 var _user$project$Main$SelectCountry = function (a) {
 	return {ctor: 'SelectCountry', _0: a};
@@ -14574,7 +14574,7 @@ var _user$project$Main$view = function (model) {
 										_0: A2(
 											_elm_lang$html$Html$map,
 											_user$project$Main$SelectAccount,
-											A3(_user$project$BulmaView$autoComplInput, _elm_lang$html$Html$text, 'Account', model.accountA)),
+											A3(_user$project$BulmaView$autoComplInput, _elm_lang$html$Html$text, 'Account', model.account)),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
