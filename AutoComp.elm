@@ -1,6 +1,6 @@
 module AutoComp exposing (..)
 
-import Selector exposing (..)
+import Selector as S exposing (Selector(..), Op(..), keyCodeTo, onKeyDown, filterList)
 import Html exposing (Attribute)
 import Html.Events exposing (onMouseOver, onMouseDown, onBlur, onInput)
 import Html.Attributes exposing (attribute, value, type_)
@@ -31,7 +31,7 @@ update toStr elems msg model =
         ToSelector op ->
             let
                 ( selector, selected ) =
-                    model.selector |> updateSelector op
+                    model.selector |> S.update op
             in
                 { model
                     | selector = selector

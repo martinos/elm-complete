@@ -8,16 +8,6 @@ import Html.Events exposing (..)
 import Regex
 
 
-filterList : String -> String -> Bool
-filterList filter toFilter =
-    String.startsWith (filter |> String.toLower) (toFilter |> String.toLower)
-
-
-onKeyDown : (Int -> msg) -> Attribute msg
-onKeyDown tagger =
-    on "keydown" (JD.map tagger keyCode)
-
-
 type Op a
     = Up
     | Down
@@ -93,8 +83,8 @@ moveAt idx selector =
                 |> Maybe.withDefault (NoneSelected list)
 
 
-updateSelector : Op a -> Selector a -> ( Selector a, Maybe a )
-updateSelector op selector =
+update : Op a -> Selector a -> ( Selector a, Maybe a )
+update op selector =
     case op of
         Up ->
             ( selector |> moveL, Nothing )
@@ -171,3 +161,13 @@ showSelector selector =
                 False
             else
                 True
+
+
+filterList : String -> String -> Bool
+filterList filter toFilter =
+    String.startsWith (filter |> String.toLower) (toFilter |> String.toLower)
+
+
+onKeyDown : (Int -> msg) -> Attribute msg
+onKeyDown tagger =
+    on "keydown" (JD.map tagger keyCode)
