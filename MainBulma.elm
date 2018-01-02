@@ -8,17 +8,27 @@ import AutoComp as A
 import BulmaView exposing (..)
 
 
+type alias Movie =
+    { name : String, director : String }
+
+
 type alias Model =
-    { account : A.State String
+    { movie : A.State Movie
     , country : A.State String
     }
 
 
 model : Model
 model =
-    { account = A.initState
+    { movie = A.initState
     , country = A.initState
     }
+
+
+accounts =
+    [ { name = "The Empire Strikes Back", director = "Irvin Kershner" }
+    , { name = "Star Wars", director = "George Lucas" }
+    ]
 
 
 main =
@@ -26,7 +36,7 @@ main =
 
 
 type Msg
-    = SelectAccount (A.Msg String)
+    = SelectAccount (A.Msg Movie)
     | SelectCountry (A.Msg String)
 
 
@@ -34,7 +44,7 @@ update : Msg -> Model -> Model
 update msg model =
     case msg of
         SelectAccount op ->
-            { model | account = model.account |> A.update identity [ "caspian", "ccom" ] op }
+            { model | movie = model.movie |> A.update .name accounts op }
 
         SelectCountry op ->
             { model | country = model.country |> A.update identity countries op }
@@ -46,7 +56,7 @@ view model =
         [ bulma
         , section [ class "section" ]
             [ div [ class "container" ]
-                [ div [ class "field" ] [ autoComplInput text "Account" model.account |> Html.map SelectAccount ]
+                [ div [ class "field" ] [ autoComplInput (.name >> text) "Movie" model.movie |> Html.map SelectAccount ]
                 , div [ class "field" ] [ autoComplInput text "Country" model.country |> Html.map SelectCountry ]
                 ]
             ]
