@@ -46,8 +46,8 @@ view model =
         [ bulma
         , section [ class "section" ]
             [ div [ class "container" ]
-                [ div [ class "field" ] [ autoComplInput identity "Account" model.accountA |> Html.map SelectAccount ]
-                , div [ class "field" ] [ autoComplInput identity "Country" model.country |> Html.map SelectCountry ]
+                [ div [ class "field" ] [ autoComplInput text "Account" model.accountA |> Html.map SelectAccount ]
+                , div [ class "field" ] [ autoComplInput text "Country" model.country |> Html.map SelectCountry ]
                 ]
             ]
         ]

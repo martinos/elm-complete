@@ -7,8 +7,8 @@ import Selector as S
 import AutoComp as A
 
 
-autoComplInput : (a -> String) -> String -> A.State a -> Html (A.Msg a)
-autoComplInput toStr labelStr state =
+autoComplInput : (a -> Html (S.Op a)) -> String -> A.State a -> Html (A.Msg a)
+autoComplInput toHtml labelStr state =
     div [ class "dropdown", classList [ ( "is-active", S.showSelector state.selector ) ] ]
         [ div []
             [ label [ class "label" ] [ text labelStr ]
@@ -22,7 +22,7 @@ autoComplInput toStr labelStr state =
             , div [ class "dropdown-menu", id "dropdown-menu", attribute "role" "menu" ]
                 [ div [ class "dropdown-content" ]
                     (state.selector
-                        |> S.viewSelector (viewSelected toStr) (viewUnselected toStr)
+                        |> S.viewSelector (viewSelected toHtml) (viewUnselected toHtml)
                     )
                 ]
                 |> Html.map A.ToSelector
@@ -30,12 +30,12 @@ autoComplInput toStr labelStr state =
         ]
 
 
-viewUnselected toStr ( idx, elem ) =
+viewUnselected toHtml ( idx, elem ) =
     a [ class "dropdown-item", onMouseOver (S.OnHover idx), onMouseDown (S.OnClick idx) ]
-        [ toStr elem |> text ]
+        [ elem |> toHtml ]
 
 
-viewSelected : (a -> String) -> ( Int, a ) -> Html (S.Op a)
-viewSelected toStr ( idx, elem ) =
+viewSelected : (a -> Html (S.Op a)) -> ( Int, a ) -> Html (S.Op a)
+viewSelected toHtml ( idx, elem ) =
     a [ class "dropdown-item is-active", onMouseOver (S.OnHover idx), onMouseDown (S.OnClick idx) ]
-        [ toStr elem |> text ]
+        [ elem |> toHtml ]
