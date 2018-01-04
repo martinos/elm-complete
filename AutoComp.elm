@@ -35,10 +35,7 @@ update toStr elems msg model =
             in
                 { model
                     | selector = selector
-                    , input =
-                        selected
-                            |> Maybe.map toStr
-                            |> Maybe.withDefault model.input
+                    , input = selected |> Maybe.map toStr |> Maybe.withDefault model.input
                 }
 
 

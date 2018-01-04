@@ -9,23 +9,23 @@ import AutoComp as A
 
 autoComplInput : (a -> Html (S.Op a)) -> String -> A.State a -> Html (A.Msg a)
 autoComplInput toHtml labelStr state =
-    div [ class "dropdown", classList [ ( "is-active", S.showSelector state.selector ) ] ]
-        [ div []
-            [ label [ class "label" ] [ text labelStr ]
-            , div [ class "control" ]
-                [ input
-                    ([ type_ "text", class "input" ]
-                        ++ A.inputAttributes state
-                    )
-                    []
+    div [ class "field" ]
+        [ div [ class "dropdown", classList [ ( "is-active", S.showSelector state.selector ) ] ]
+            [ div []
+                [ label [ class "label" ] [ text labelStr ]
+                , div [ class "control" ]
+                    [ input
+                        ([ type_ "text", class "input" ] ++ A.inputAttributes state)
+                        []
+                    ]
+                , div [ class "dropdown-menu", id "dropdown-menu", attribute "role" "menu" ]
+                    [ div [ class "dropdown-content" ]
+                        (state.selector
+                            |> S.viewSelector (viewSelected toHtml) (viewUnselected toHtml)
+                        )
+                    ]
+                    |> Html.map A.ToSelector
                 ]
-            , div [ class "dropdown-menu", id "dropdown-menu", attribute "role" "menu" ]
-                [ div [ class "dropdown-content" ]
-                    (state.selector
-                        |> S.viewSelector (viewSelected toHtml) (viewUnselected toHtml)
-                    )
-                ]
-                |> Html.map A.ToSelector
             ]
         ]
 

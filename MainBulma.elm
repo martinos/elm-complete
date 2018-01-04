@@ -56,8 +56,8 @@ view model =
         [ bulma
         , section [ class "section" ]
             [ div [ class "container" ]
-                [ div [ class "field" ] [ autoComplInput (.name >> text) "Movie" model.movie |> Html.map SelectAccount ]
-                , div [ class "field" ] [ autoComplInput text "Country" model.country |> Html.map SelectCountry ]
+                [ model.movie |> autoComplInput (.name >> text) "Movie" |> Html.map SelectAccount
+                , model.country |> autoComplInput text "Country" |> Html.map SelectCountry
                 ]
             ]
         ]
@@ -65,6 +65,10 @@ view model =
 
 bulma =
     css "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css"
+
+
+foundation =
+    css "https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"
 
 
 css : String -> Html msg

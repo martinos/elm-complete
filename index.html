@@ -9252,108 +9252,119 @@ var _user$project$BulmaView$autoComplInput = F3(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('dropdown'),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$classList(
-						{
-							ctor: '::',
-							_0: {
-								ctor: '_Tuple2',
-								_0: 'is-active',
-								_1: _user$project$Selector$showSelector(state.selector)
-							},
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
+				_0: _elm_lang$html$Html_Attributes$class('field'),
+				_1: {ctor: '[]'}
 			},
 			{
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$div,
-					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('dropdown'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$classList(
+								{
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'is-active',
+										_1: _user$project$Selector$showSelector(state.selector)
+									},
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					},
 					{
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$label,
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
 							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('label'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(labelStr),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('control'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$input,
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$type_('text'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('input'),
-													_1: {ctor: '[]'}
-												}
-											},
-											_user$project$AutoComp$inputAttributes(state)),
-										{ctor: '[]'}),
-									_1: {ctor: '[]'}
-								}),
-							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$map,
-									_user$project$AutoComp$ToSelector,
-									A2(
+									_elm_lang$html$Html$label,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('label'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(labelStr),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
 										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('dropdown-menu'),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$id('dropdown-menu'),
-												_1: {
-													ctor: '::',
-													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'menu'),
-													_1: {ctor: '[]'}
-												}
-											}
+											_0: _elm_lang$html$Html_Attributes$class('control'),
+											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
 											_0: A2(
+												_elm_lang$html$Html$input,
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$type_('text'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('input'),
+															_1: {ctor: '[]'}
+														}
+													},
+													_user$project$AutoComp$inputAttributes(state)),
+												{ctor: '[]'}),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$map,
+											_user$project$AutoComp$ToSelector,
+											A2(
 												_elm_lang$html$Html$div,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('dropdown-content'),
-													_1: {ctor: '[]'}
+													_0: _elm_lang$html$Html_Attributes$class('dropdown-menu'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$id('dropdown-menu'),
+														_1: {
+															ctor: '::',
+															_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'menu'),
+															_1: {ctor: '[]'}
+														}
+													}
 												},
-												A3(
-													_user$project$Selector$viewSelector,
-													_user$project$BulmaView$viewSelected(toHtml),
-													_user$project$BulmaView$viewUnselected(toHtml),
-													state.selector)),
-											_1: {ctor: '[]'}
-										})),
-								_1: {ctor: '[]'}
-							}
-						}
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$div,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('dropdown-content'),
+															_1: {ctor: '[]'}
+														},
+														A3(
+															_user$project$Selector$viewSelector,
+															_user$project$BulmaView$viewSelected(toHtml),
+															_user$project$BulmaView$viewUnselected(toHtml),
+															state.selector)),
+													_1: {ctor: '[]'}
+												})),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
 			});
@@ -10346,6 +10357,7 @@ var _user$project$Main$css = function (path) {
 		},
 		{ctor: '[]'});
 };
+var _user$project$Main$foundation = _user$project$Main$css('https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css');
 var _user$project$Main$bulma = _user$project$Main$css('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css');
 var _user$project$Main$accounts = {
 	ctor: '::',
@@ -10423,46 +10435,24 @@ var _user$project$Main$view = function (model) {
 							{
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$div,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('field'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$map,
-											_user$project$Main$SelectAccount,
-											A3(
-												_user$project$BulmaView$autoComplInput,
-												function (_p1) {
-													return _elm_lang$html$Html$text(
-														function (_) {
-															return _.name;
-														}(_p1));
-												},
-												'Movie',
-												model.movie)),
-										_1: {ctor: '[]'}
-									}),
+									_elm_lang$html$Html$map,
+									_user$project$Main$SelectAccount,
+									A3(
+										_user$project$BulmaView$autoComplInput,
+										function (_p1) {
+											return _elm_lang$html$Html$text(
+												function (_) {
+													return _.name;
+												}(_p1));
+										},
+										'Movie',
+										model.movie)),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('field'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$map,
-												_user$project$Main$SelectCountry,
-												A3(_user$project$BulmaView$autoComplInput, _elm_lang$html$Html$text, 'Country', model.country)),
-											_1: {ctor: '[]'}
-										}),
+										_elm_lang$html$Html$map,
+										_user$project$Main$SelectCountry,
+										A3(_user$project$BulmaView$autoComplInput, _elm_lang$html$Html$text, 'Country', model.country)),
 									_1: {ctor: '[]'}
 								}
 							}),
