@@ -1,10 +1,10 @@
-module BulmaView exposing (..)
+module Complete.Bulma exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onMouseOver, onMouseDown)
-import Selector as S
-import AutoComp as A
+import Complete.Selector as S
+import Complete as A
 
 
 autoComplInput : (a -> Html (S.Op a)) -> String -> A.State a -> Html (A.Msg a)

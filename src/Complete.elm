@@ -1,6 +1,6 @@
-module AutoComp exposing (..)
+module Complete exposing (..)
 
-import Selector as S exposing (Selector(..), Op(..), keyCodeTo, onKeyDown, filterList)
+import Complete.Selector as S exposing (Selector(..), Op(..), keyCodeTo, onKeyDown, filterList)
 import Html exposing (Attribute)
 import Html.Events exposing (onMouseOver, onMouseDown, onBlur, onInput)
 import Html.Attributes exposing (attribute, value, type_)

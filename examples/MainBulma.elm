@@ -3,9 +3,9 @@ module Main exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onMouseOver, onMouseDown, onClick)
-import Selector as S
-import AutoComp as A
-import BulmaView exposing (..)
+import Complete.Selector as S
+import Complete as A
+import Complete.Bulma exposing (..)
 
 
 type alias Movie =

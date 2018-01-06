@@ -1,4 +1,4 @@
-module Selector exposing (..)
+module Complete.Selector exposing (..)
 
 import Pivot as P
 import Json.Decode as JD
