@@ -54,10 +54,10 @@ view : Model -> Html Msg
 view model =
     div []
         [ foundation
-        , div [ class "container" ]
+        , div [ class "grid-container" ]
             [ div [ class "grid-x" ]
-                [ div [ class "small-12 cell" ] [ model.movie |> autoComplInput (.name >> text) "Movie" |> Html.map SelectAccount ]
-                , div [ class "small-12 cell" ] [ model.country |> autoComplInput text "Country" |> Html.map SelectCountry ]
+                [ div [ class "small-8 cell" ] [ model.movie |> autoComplInput (.name >> text) "Movie" |> Html.map SelectAccount ]
+                , div [ class "small-8 cell" ] [ model.country |> autoComplInput text "Country" |> Html.map SelectCountry ]
                 ]
             ]
         ]

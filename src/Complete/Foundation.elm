@@ -12,9 +12,9 @@ autoComplInput toHtml labelStr state =
     div []
         [ label [] [ text labelStr, input ([ type_ "text" ] ++ A.inputAttributes state) [] ]
         , ul [ class "dropdown menu" ]
-            [ li [ class "is-dropdown-submenu-parent opens-right" ]
+            [ li [ class "is-dropdown-submenu-parent opens-right", style [ ( "width", "100%" ) ] ]
                 [ ul
-                    [ class "menu submenu is-dropdown-submenu first-sub vertical", classList [ ( "js-dropdown-active", S.showSelector state.selector ) ] ]
+                    [ class "menu submenu is-dropdown-submenu first-sub vertical", classList [ ( "js-dropdown-active", S.showSelector state.selector ) ], style [ ( "width", "100%" ) ] ]
                     (state.selector
                         |> S.viewSelector (viewSelected toHtml) (viewUnselected toHtml)
                     )
